@@ -23,7 +23,7 @@ const createBook = async function (req, res) {
             return res.status(400).send({ status: false, message: "body cant be empty" })
         }
         // Destructuring
-        const { title, excerpt, userId, ISBN, category, subcategory, reviews, releasedAt } = bookData
+        const { title, excerpt, userId, ISBN, category, subcategory, reviews, releasedAt,bookcover } = bookData
         //checking title validation
         if (!isValid(title)) {
             return res.status(400).send({ status: false, message: "title is not valid" })
@@ -68,6 +68,9 @@ const createBook = async function (req, res) {
         //checking subcategory validation
         if (!isValid(subcategory)) {
             return res.status(400).send({ status: false, message: "subcategory is mandatory" })
+        }
+        if (!isValid(bookcover)) {
+            return res.status(400).send({ status: false, message: "bookcover is mandatory" })
         }
         //checking reviews validation
 

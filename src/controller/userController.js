@@ -136,7 +136,7 @@ let loginUser = async function (req, res) {
         return res.status(400).send({ status: false, message: "password or emaild are invalid" });
     }
   
-    let date = Date.now();
+    // let date = Date.now();
     // let createTime = Math.floor(date / 1000);
     // let expTime = createTime + 120;
     let createTime= Math.floor(Date.now() / 1000);
